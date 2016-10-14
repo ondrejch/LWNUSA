@@ -4,9 +4,9 @@
 # Ondrej Chvala, ochvala@utk.edu, 2016-10-14
 
 
-def write_surfaces(pitch = 10.0, 
+def write_surfaces(pitch = 5.0, 
     r1=0.580, r2=0.707, r3=1.398, r4=1.525, 
-    r5=3.180, r6=3.310):
+    r5=3.180/2.0, r6=3.310/2.0):
     '''Function to write material cards for Serpent input deck.
     Inputs: [cm]
         pitch:     channel pitch
