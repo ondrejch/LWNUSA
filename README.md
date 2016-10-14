@@ -1,2 +1,4 @@
-# NULWSA
-Natural uranium fueled light water subritical assembly model
+# LWNUSA
+Light water moderated natural uranium fueled subritical assembly model 
+
+Ondrej Chvala <ochvala@utk.edu>
