@@ -16,9 +16,9 @@ done
 
 
 # Plot the data 
-gnuplot -e 'set terminal pngcairo size 1000,800 enhanced font "Verdana,12";
+gnuplot -e 'set terminal pngcairo size 1000,800 enhanced font "Verdana,16";
 set out "k_inf.png";
 set xlabel "fuel pitch [cm]";
 set ylabel "k_{inf}";
-plot [3.35:5.55][:1] "kinf.dat" u 1:2:($2*$3) w e ls 1 lc rgb "#ee0101" lw 1.4  notit'
+plot [3.35:9.35][:1] "kinf.dat" u 1:2:($2*$3) w e ls 1 lc rgb "#ee0101" lw 1.4  notit'
 
