@@ -31,9 +31,11 @@ mat air -0.001205 tmp 300 rgb 200 200 200   % Dry air, sea level
  8016.03c   -0.231781
 18040.03c   -0.012827
 
-mat water -0.998207 tmp 300 rgb 100 100 250 % De-aerated water at 1 atm.
+mat water -0.998207 tmp 300 moder lwtr 1001 rgb 100 100 250 % De-aerated water at 1 atm.
   1001.03c  -0.111894
   8016.03c  -0.888106
+
+therm lwtr lwe7.00t
 
 mat aluminum -2.698900 tmp 300.0 rgb 80 120 235
  13027.03c  -1.000000
