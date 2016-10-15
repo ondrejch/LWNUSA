@@ -34,7 +34,7 @@ def write_deck(pitch=5.0):
 set bc 3
 
 % Neutron population and criticality cycles
-set pop 250000 200 40 % 25000 neutrons, 200 active cycles, 40 inactive cycles
+set pop 25000 200 40 % 25000 neutrons, 200 active cycles, 40 inactive cycles
 
 % Data Libraries
 set acelib "sss_endfb7u.sssdir"
