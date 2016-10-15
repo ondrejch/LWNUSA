@@ -34,7 +34,7 @@ def write_deck(pitch=5.0):
 set bc 3
 
 % Neutron population and criticality cycles
-set pop 10000 200 40 % 10000 neutrons, 200 active cycles, 40 inactive cycles
+set pop 25000 200 40 % 25000 neutrons, 200 active cycles, 40 inactive cycles
 
 % Data Libraries
 set acelib "sss_endfb7u.sssdir"
@@ -52,8 +52,8 @@ set nfylib "sss_endfb7.nfy"
 plot 1 3000 3000
 plot 2 3000 3000
 plot 3 3000 3000
-mesh 1 3000 3000
-mesh 2 3000 3000
+%mesh 1 3000 3000
+%mesh 2 3000 3000
 mesh 3 3000 3000
 '''
     output += plot_cards
