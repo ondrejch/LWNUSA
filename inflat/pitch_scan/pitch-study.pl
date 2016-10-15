@@ -4,6 +4,7 @@
 # Ondrej Chvala, ochvala@utk.edum  
 
 $mywriter='~/git/LWNUSA/inflat/scripts/writeinfdeck.py --pitch ';
+$qsub='~/git/LWNUSA/inflat/qsub.sh';
 
 $pmin = 3.4;    # min pitch [cm]
 $pmax = 9.9;    # max pitch [cm]
@@ -15,7 +16,8 @@ while ($p < $pmax) {
   $mydir = sprintf('%05.3f',$pitch);
   print "$mydir: $pitch\n";
   system("mkdir -p $mydir; cd $mydir; $mywriter $pitch");
-#  system("cd $mydir;sss2 -omp 8 lwnusa.inp");
+  system("cd $mydir; qsub $qsub");
+  #  system("cd $mydir;sss2 -omp 8 lwnusa.inp");
   $p += $pstep;
 }
 
