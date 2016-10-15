@@ -10,12 +10,12 @@ import surfaces
 def write_deck(pitch=5.0):
     '''Function to write the LWNUSA Serpent input deck.
     Inputs: 
-        pitch:  fule pin pitch [cm]
+        pitch:  fuel pin pitch [cm]
     Outputs:
-        output: String containing the FastDrum deck'''
+        output: String containing the LWNUSA1 deck'''
 
     # Header
-    output = '''set title "Light water moderated natural uranium fueled subritical assembly, fuel pitch {pitch} cm."
+    output = '''set title "Light water moderated natural uranium fueled subcritical assembly, fuel pitch {pitch} cm."
 '''
     # Surfaces
     output += surfaces.write_surfaces(pitch)
@@ -30,13 +30,11 @@ def write_deck(pitch=5.0):
     data_cards = '''
 %______________data cards___________________________________________
 
-% Power [W]
-
 % Boundary condition
-set bc 1
+set bc 3
 
 % Neutron population and criticality cycles
-set pop 10000 200 40 % 10000 neutrons, 100 cycles, 40 of them inactive
+set pop 10000 200 40 % 10000 neutrons, 200 active cycles, 40 inactive cycles
 
 % Data Libraries
 set acelib "sss_endfb7u.sssdir"

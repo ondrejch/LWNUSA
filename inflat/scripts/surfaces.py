@@ -37,7 +37,7 @@ surf 9  sqc    0.0 0.0 {l}  % water box
     return surfaces
 
 if __name__ == '__main__':
-    print("This module writes surfaces for the MSBR lattice.")
+    print("This module writes surfaces for the LWNUSA lattice.")
     input("Press Ctrl+C to quit, or enter else to test it.")
     print(write_surfaces())
 

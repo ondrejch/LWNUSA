@@ -14,7 +14,7 @@ Outputs:
     mats = '''
 %-------material definition--------------
 
-mat fuel -19.10 tmp 300.0 rgb 190 10 100    % Fuel is NU metal
+mat fuel -18.90 tmp 300.0 rgb 190 10 100    % Fuel is NU metal
 92234.03c   -0.000057       % U-234
 92235.03c   -0.007204       % U-235
 92238.03c   -0.992739       % U-238
