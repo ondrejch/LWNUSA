@@ -5,8 +5,8 @@
 
 $mywriter='~/git/LWNUSA/inflat/scripts/writeinfdeck.py --pitch ';
 
-$pmax = 9.95;   # max pitch [cm]
 $pmin = 3.4;    # min pitch [cm]
+$pmax = 9.9;    # max pitch [cm]
 $pstep= 0.1;    # step pitch [cm]
 
 $p = $pmin;
