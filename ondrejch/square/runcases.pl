@@ -5,7 +5,7 @@ use warnings;
 
 my $pmin = 4.0;
 my $pmax = 6.0;
-my $pstep = 0.25;
+my $pstep = 0.1;
 
 for (my $p=$pmin; $p<=$pmax; $p+=$pstep){ 
   my $pitch  = sprintf("%5.3f",$p);
