@@ -5,7 +5,6 @@ use warnings;
 use Time::Piece;
 my $today = localtime->ymd();
 
-#print "$#ARGV\n";
 my $R      = 15;
 my $T      = 42;
 my $pitchf = 4.5;
@@ -44,7 +43,7 @@ chmod 0750, "lwnusa.sh";
 
 open(FOUT,">:encoding(UTF-8)",$fname);
 
-print FOUT "R15-T42in_P4.5cm-ondrejch_$today
+print FOUT "$fname
 c Cell cards
 1 4 -0.998207 -1 imp:n,p=1 u=1        \$ water inside fuel rod
 2 6 -2.70 1 -2 imp:n,p=1 u=1          \$ inner aluminum cladding
