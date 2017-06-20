@@ -43,7 +43,7 @@ chmod 0750, "lwnusa.sh";
 
 open(FOUT,">:encoding(UTF-8)",$fname);
 
-print FOUT "\$fname
+print FOUT "$fname
 c Cell cards
 1 4 -0.998207 -1     imp:n,p=1 u=2      \$ water inside fuel rod
 2 6 -2.70 1 -2       imp:n,p=1 u=2      \$ inner aluminum cladding
