@@ -52,15 +52,14 @@ c Cell cards
 5 4 -0.998207 4 -5        imp:n,p=1 u=2     \$ water outside fuel slug
 6 6 -2.70 5 -6            imp:n,p=1 u=2     \$ aluminum tube of fuel rod
 7 4 -0.998207 6 -9        imp:n,p=1 u=2     \$ water outside of fuel rod
-8 0 -8 lat=1 fill=1       imp:n,p=1         \$ fill fuel rods into lattice
-9 4 -0.998207 -7 lat=1 fill=-9:9  -9:9   0:0 \$ fill lattice into real world
+8 4 -0.998207 -8          imp:n,p=1 fill=1  \$ fill fuel rods into lattice
+9 4 -0.998207 -7 lat=1 fill=-8:8 -8:8 0:0   \$ fill lattice into real world
      1 1 1 1 1 1 2 2 2 2 2 1 1 1 1 1 1 
      1 1 1 1 2 2 2 2 2 2 2 2 2 1 1 1 1 
      1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 
      1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 
      1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 
      1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 
-     1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 
      2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
      2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
      2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
@@ -72,6 +71,7 @@ c Cell cards
      1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 
      1 1 1 1 2 2 2 2 2 2 2 2 2 1 1 1 1 
      1 1 1 1 1 1 2 2 2 2 2 1 1 1 1 1 1 
+     u=1 imp:n,p=1
 10 4 -.998207 8 -9 -13    imp:n,p=1         \$ water in tank
 11 6 -2.70 9 -10          imp:n,p=1         \$ tank walls
 12 10 -2.2994 -11         imp:n,p=1         \$ concrete floor
