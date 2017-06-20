@@ -5,12 +5,17 @@ use warnings;
 use Time::Piece;
 my $today = localtime->ymd();
 
+my $mode   = 'kcode';
 my $R      = 15;
 my $T      = 42;
 my $pitchf = 4.5;
 if ($#ARGV == 0 ) { $pitchf = 1.0*$ARGV[0]; }
-if ($#ARGV >  0 ) {
-  print "The script only takes one argument, pitch [cm]. \n";
+if ($#ARGV == 1 && $ARGV[1] eq 'dose') {
+    $pitchf = 1.0*$ARGV[0];
+    $mode = 'dose';
+}
+if ($#ARGV >  1 || ($#ARGV==1 && $ARGV[1]ne'kcode' && $ARGV[1]ne'dose')) {
+  print "The script takes either one argument: pitch [cm], or two arguments: pitch [cm] and mode [kcode|dose]. \n";
   die;
 }
 my $pitch    = sprintf("%5.3f",$pitchf);
@@ -79,8 +84,10 @@ c Surface cards
 99 RPP -100.8 100.8 -100.8 100.8 -57.12 262.92        \$ outside world 
 
 c Data Cards
-c materials
-c Uranium
+print
+c
+c Materials
+c natural uranium metal
 m1   92234 -0.000057
      92235 -0.007204
      92238 -0.992739
@@ -467,7 +474,10 @@ E105 0 0.01
        10
 c
 mode n p
-KCODE 25000 0.84 300 1000
+";
+
+if ($mode eq 'kcode') {
+    print FOUT "KCODE 25000 0.84 300 1000
 KSRC  -28.95 -28.95 121.3   -28.95 -28.95 101.3   -28.95 -28.95 86.3
       -28.95 -26.05 121.3   -28.95 -26.05 101.3   -28.95 -26.05 86.3
       -28.95 -21.05 121.3   -28.95 -21.05 101.3   -28.95 -21.05 86.3
@@ -769,8 +779,31 @@ KSRC  -28.95 -28.95 121.3   -28.95 -28.95 101.3   -28.95 -28.95 86.3
       28.95 26.05 40   28.95 26.05 25   28.95 26.05 5
       28.95 28.95 40   28.95 28.95 25   28.95 28.95 5
 c
-print
-";
+"; }
 
-close(FOUT);
+if ($mode eq 'dose') {
+    print FOUT "nps 2000000
+c Source Cards---------------------------------------------------
+SDEF POS=0 0 45.72 RAD=D2 AXS=0 0 1 EXT=D3 ERG=D1 PAR=N
+CTME=30
+c Source Energies------------------------------------------------
+SI1  0 0.25 0.5 0.75 1 1.25 1.5 1.75 2 2.25 2.5 2.75 3 3.25 3.5 3.75
+     4 4.25 4.5 4.75 5 5.25 5.5 5.75 6 6.25 6.5 6.75 7 7.25 7.5 7.75
+     8 8.25 8.5 8.75 9 9.25 9.5 9.75 10 10.25 10.5 10.75 11 11.25 11.5 11.75 12
+SP1 D 0 2.39E-4 4.95E-3 1.29E-2 1.69E-2 1.73E-2 1.54E-2 1.17E-2
+        1.59E-2 1.93E-2 2.15E-2 2.62E-2 3.84E-2 4.96E-2 5.22E-2 5.01E-2
+        4.72E-2 4.49E-2 4.32E-2 4.13E-2 3.89E-2 3.35E-2 2.76E-2 2.49E-2
+        2.40E-2 2.09E-2 2.12E-2 2.39E-2 2.50E-2 2.50E-2 2.49E-2 2.43E-2
+        2.30E-2 2.11E-2 1.94E-2 1.82E-2 1.75E-2 1.67E-2 1.47E-2 1.13E-2
+        7.08E-3 3.98E-3 2.57E-3 1.34E-3 4.27E-4 5.93E-6 1.23E-8 9.78E-9 7.74E-9
+c Radius Distribution---------------------------------------------
+SI2 H 0 1.25
+SP2 -21 1
+c EXT Distribution------------------------------------------------
+SI3 H 0 5.7
+SP3 -21 1
+c
+"; }
+
+close(FOUT)
 
