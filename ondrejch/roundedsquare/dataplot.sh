@@ -17,7 +17,7 @@ set ytics nomirror
 set y2tics 0.1
 set xtics 0.1
 set grid
-set title "Square pitch, 225 rods"
+set title "Rounded square pitch, 225 rods"
 set xlabel "pitch [cm]"
 set ylabel "k_{eff}"
 set y2label "maximum radius of hole between rods [cm]"
